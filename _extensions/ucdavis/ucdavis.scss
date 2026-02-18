@@ -11,11 +11,11 @@ $accent2: $ucdavis-gold-muted;
 $right-arrow: "\2192"; // Unicode character for right arrow
 
 // fonts
-// Public Sans from Google Fonts
-@import url('https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
-$font-family-sans-serif: "Public Sans", sans-serif !default;
-$presentation-heading-font: "Public Sans", sans-serif !default;
+$font-family-sans-serif: "Fira Sans Condensed", sans-serif !default;
+$font-family-monospace: "Source Code Pro", monospace !default;
+$presentation-heading-font: "Fira Sans Condensed", sans-serif !default;
 
 $presentation-heading-color: $ucdavis-blue !default;
 $presentation-heading-font-weight: 600;
