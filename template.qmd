@@ -64,5 +64,5 @@ quarto use template hail2thief/quarto-revealjs-ucdavis
 
 ### A UC Davis presentation theme
 
-The Quarto reveal.js UC Davis theme uses Public Sans and UC Davis brand colors
-(Aggie Blue `#022851` and Aggie Gold `#B3A369`) for a clean, professional look.
+The Quarto reveal.js UC Davis theme uses Atkinson Hyperlegible Next and UC Davis brand colors
+(Aggie Blue `#022851` and Aggie Gold `#B3A369`) on an off-white background.

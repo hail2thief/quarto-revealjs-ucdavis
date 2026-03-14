@@ -5,26 +5,27 @@
 $ucdavis-blue: #022851;
 $ucdavis-gold: #FFBF00;
 $ucdavis-gold-muted: #B3A369;
+$ucdavis-blue-soft: #1B4F72; // Softer blue for light-weight text elements
 $jet: #131516;
-$accent: $ucdavis-blue;
+$accent: $ucdavis-blue-soft;
 $accent2: $ucdavis-gold-muted;
 $right-arrow: "\2192"; // Unicode character for right arrow
 
 // fonts
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
-$font-family-sans-serif: "Fira Sans Condensed", sans-serif !default;
+$font-family-sans-serif: "Atkinson Hyperlegible Next", sans-serif !default;
 $font-family-monospace: "Source Code Pro", monospace !default;
-$presentation-heading-font: "Fira Sans Condensed", sans-serif !default;
+$presentation-heading-font: "Atkinson Hyperlegible Next", sans-serif !default;
 
-$presentation-heading-color: $ucdavis-blue !default;
-$presentation-heading-font-weight: 600;
+$presentation-heading-color: $jet !default;
+$presentation-heading-font-weight: 700;
 //$presentation-heading-line-height: 2;
 //$presentation-block-margin: 28px;
 $presentation-font-size-root: 32px;
 
 // colors
-//$body-bg: #f0f1eb !default;
+$body-bg: #F5F5F5 !default;
 $body-color: $jet !default;
 $link-color: $ucdavis-blue !default;
 $selection-bg: $ucdavis-blue !default;
@@ -48,8 +49,8 @@ $selection-bg: $ucdavis-blue !default;
 
   .title {
     color: $ucdavis-blue;
-    font-size: 1.4em;
-    font-weight: 700;
+    font-size: 1.6em;
+    font-weight: bold;
   }
 
   .subtitle {
@@ -85,7 +86,7 @@ $selection-bg: $ucdavis-blue !default;
 
 
 .reveal h2 {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1.4em;
 }
 
@@ -97,8 +98,8 @@ $selection-bg: $ucdavis-blue !default;
 }
 
 .reveal h4 {
-  color: $ucdavis-blue;
-  font-weight: 500;
+  color: $ucdavis-blue-soft;
+  font-weight: 600;
   margin-top: 1.25em;
 }
 
@@ -113,7 +114,7 @@ $selection-bg: $ucdavis-blue !default;
 }
 
 .bg {
-  background-color: var(--col, #fff);
+  background-color: var(--col, #F5F5F5);
   padding: 0.1em;
   border-radius: 5px;
   display: inline-block;
@@ -128,7 +129,7 @@ $selection-bg: $ucdavis-blue !default;
   padding-left: 16px;
 
   li::marker {
-    color: mix($ucdavis-blue, white, 70%);
+    color: mix($accent, white, 70%);
   }
 }
 
@@ -137,7 +138,7 @@ $selection-bg: $ucdavis-blue !default;
 
   li:before {
     content: $right-arrow;
-    color: mix($ucdavis-blue, white, 60%);
+    color: mix($accent, white, 60%);
     display: inline-block;
     width: 1em;
     margin-left: -1em;
@@ -152,7 +153,7 @@ $selection-bg: $ucdavis-blue !default;
   padding-left: 16px;
 
   li::marker {
-    color: $ucdavis-blue;
+    color: $accent;
   }
 }
 
@@ -230,8 +231,8 @@ $selection-bg: $ucdavis-blue !default;
 }
 
 .button:hover {
-  background-color: lighten($ucdavis-blue, 15%);
-  border-color: lighten($ucdavis-blue, 15%);
+  background-color: $ucdavis-blue-soft;
+  border-color: $ucdavis-blue-soft;
 }
 
 .button::before {

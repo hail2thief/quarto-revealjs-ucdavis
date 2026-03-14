@@ -1,6 +1,6 @@
 # Quarto UC Davis theme
 
-A UC Davis-branded presentation theme for Quarto Reveal.js. Uses **Fira Sans Condensed** for text, **Source Code Pro** for code, and the official UC Davis color palette (Aggie Blue and Aggie Gold).
+A UC Davis-branded presentation theme for Quarto Reveal.js. Uses **Atkinson Hyperlegible Next** for text, **Source Code Pro** for code, and the official UC Davis color palette (Aggie Blue and Aggie Gold) on an off-white background.
 
 ![](ucdavis-title.png)
 
@@ -35,9 +35,11 @@ The theme uses the official UC Davis brand colors:
 
 | Color | Hex | Usage |
 |---|---|---|
-| Aggie Blue | `#022851` | Headings, links, buttons |
-| Aggie Gold (muted) | `#B3A369` | Subtitles, alerts |
+| Aggie Blue | `#022851` | Title, links, buttons |
+| Aggie Blue (soft) | `#1B4F72` | h4, list markers |
+| Aggie Gold (muted) | `#B3A369` | Subtitles, h3, alerts |
 | Aggie Gold (bright) | `#FFBF00` | Available as `$ucdavis-gold` |
+| Off-white | `#F5F5F5` | Slide background |
 
 ## Acknowledgments
 
