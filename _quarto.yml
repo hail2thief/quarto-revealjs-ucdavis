@@ -1,0 +1,16 @@
+project:
+  type: default
+  output-dir: docs
+
+brand: _brand.yml
+
+format:
+  revealjs:
+    width: 1600
+    height: 900
+    theme: [default, brand, custom.scss]
+    menu:
+      side: left
+    slide-number: true
+    date-format: long
+    html-math-method: mathjax

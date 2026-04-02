@@ -1,0 +1,32 @@
+meta:
+  name: UC Davis Slides
+
+color:
+  palette:
+    aggie-blue: "#022851"
+    aggie-blue-soft: "#1B4F72"
+    aggie-gold: "#FFBF00"
+    aggie-gold-contrast: "#FFBF00"
+    offwhite: "#FFFFFF"
+    jet: "#131516"
+  foreground: jet
+  background: offwhite
+  primary: aggie-blue
+  secondary: aggie-gold-contrast
+  tertiary: aggie-blue-soft
+
+typography:
+  fonts:
+    - family: Atkinson Hyperlegible Next
+      source: google
+    - family: Source Code Pro
+      source: google
+  base:
+    family: Atkinson Hyperlegible Next
+    weight: 400
+  headings:
+    family: Atkinson Hyperlegible Next
+    weight: 700
+    color: jet
+  monospace:
+    family: Source Code Pro

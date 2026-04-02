@@ -1,18 +1,17 @@
 /*-- scss:defaults --*/
 
-// UC Davis brand colors
+// Keep reveal-specific Sass variables local so the theme compiles reliably.
+// Shared project branding still lives in _brand.yml.
 
 $ucdavis-blue: #022851;
-$ucdavis-gold: #FFBF00;
-$ucdavis-gold-muted: #B3A369;
-$ucdavis-blue-soft: #1B4F72; // Softer blue for light-weight text elements
+$ucdavis-blue-soft: #1B4F72;
+$ucdavis-gold-contrast: #FFBF00;
+$offwhite: #FFFFFF;
 $jet: #131516;
-$accent: $ucdavis-blue-soft;
-$accent2: $ucdavis-gold-muted;
-$right-arrow: "\2192"; // Unicode character for right arrow
 
-// fonts
-@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+$accent: $ucdavis-blue-soft;
+$accent2: $ucdavis-gold-contrast;
+$right-arrow: "\2192";
 
 $font-family-sans-serif: "Atkinson Hyperlegible Next", sans-serif !default;
 $font-family-monospace: "Source Code Pro", monospace !default;
@@ -20,12 +19,9 @@ $presentation-heading-font: "Atkinson Hyperlegible Next", sans-serif !default;
 
 $presentation-heading-color: $jet !default;
 $presentation-heading-font-weight: 700;
-//$presentation-heading-line-height: 2;
-//$presentation-block-margin: 28px;
 $presentation-font-size-root: 32px;
 
-// colors
-$body-bg: #F5F5F5 !default;
+$body-bg: $offwhite !default;
 $body-color: $jet !default;
 $link-color: $ucdavis-blue !default;
 $selection-bg: $ucdavis-blue !default;
@@ -42,8 +38,6 @@ $selection-bg: $ucdavis-blue !default;
   margin-top: 1.25em;
 }
 
-// title and headings
-
 #title-slide {
   text-align: left;
 
@@ -54,10 +48,10 @@ $selection-bg: $ucdavis-blue !default;
   }
 
   .subtitle {
-    color: $ucdavis-gold-muted;
+    color: $ucdavis-gold-contrast;
     font-style: italic;
     margin-top: 0em;
-    font-weight: 400;
+    font-weight: 600;
   }
 
   .institute,
@@ -81,9 +75,7 @@ $selection-bg: $ucdavis-blue !default;
       width: 100%;
     }
   }
-
 }
-
 
 .reveal h2 {
   font-weight: 700;
@@ -91,9 +83,9 @@ $selection-bg: $ucdavis-blue !default;
 }
 
 .reveal h3 {
-  color: $ucdavis-gold-muted;
+  color: $ucdavis-gold-contrast;
   font-style: italic;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 0.95em;
 }
 
@@ -102,8 +94,6 @@ $selection-bg: $ucdavis-blue !default;
   font-weight: 600;
   margin-top: 1.25em;
 }
-
-// alerts etc.
 
 .alert {
   color: $accent2;
@@ -114,15 +104,63 @@ $selection-bg: $ucdavis-blue !default;
 }
 
 .bg {
-  background-color: var(--col, #F5F5F5);
+  background-color: var(--col, $offwhite);
   padding: 0.1em;
   border-radius: 5px;
   display: inline-block;
 }
 
-// lists
+.inverse:not(section) {
+  background-color: var(--bg, $ucdavis-blue);
+  color: var(--fg, #ffffff);
+  padding: 0.15em 0.35em;
+  border-radius: 5px;
+  display: inline-block;
+}
 
-// Unordered lists
+// Inverse slides (dark background, light text)
+// Usage: ## Slide title {.inverse background-color="#022851"}
+
+.slide-background.inverse .slide-background-content {
+  background-color: $ucdavis-blue !important;
+}
+
+section.inverse {
+  color: #F5F5F5;
+}
+
+section.inverse h1,
+section.inverse h2,
+section.inverse h3,
+section.inverse h4,
+section.inverse h5,
+section.inverse h6 {
+  color: #FFFFFF;
+}
+
+section.inverse a {
+  color: $ucdavis-gold-contrast;
+}
+
+section.inverse .alert {
+  color: $ucdavis-gold-contrast;
+}
+
+section.inverse .bg {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+section.inverse .button {
+  background-color: $ucdavis-gold-contrast;
+  border-color: $ucdavis-gold-contrast;
+  color: $ucdavis-blue !important;
+}
+
+section.inverse .button:hover {
+  background-color: #ffd24d;
+  border-color: #ffd24d;
+}
 
 .reveal ul {
   font-weight: 400;
@@ -146,8 +184,6 @@ $selection-bg: $ucdavis-blue !default;
   }
 }
 
-// Ordered lists
-
 .reveal ol {
   font-weight: 400;
   padding-left: 16px;
@@ -156,8 +192,6 @@ $selection-bg: $ucdavis-blue !default;
     color: $accent;
   }
 }
-
-// Move "hamburger" menu button to top right
 
 .reveal .slide-menu-button {
   position: fixed;
@@ -173,8 +207,6 @@ $selection-bg: $ucdavis-blue !default;
   pointer-events: auto;
 }
 
-// Same for chalkboard buttons (with an offset)
-
 .reveal .slide-chalkboard-buttons {
   position: fixed;
   top: 12px;
@@ -189,27 +221,24 @@ $selection-bg: $ucdavis-blue !default;
   pointer-events: auto;
 }
 
-// Logo to the bottom-left
 .slide-logo {
   display: block !important;
   position: fixed !important;
   bottom: 0 !important;
   left: 10px !important;
-  max-width: 150px; // Adjust if necessary
+  max-width: 150px;
   max-height: 50px;
   width: auto !important;
   color: $body-color !important;
 }
 
-// Also need to enforce slide numbers at bottom-right (if logo is present)
-.slide-number, .reveal.has-logo .slide-number {
+.slide-number,
+.reveal.has-logo .slide-number {
   bottom: 6px !important;
   right: 10px !important;
   top: unset !important;
   color: #777777 !important;
 }
-
-// Beamer-style button link environment
 
 .button {
   display: inline-block;
@@ -240,8 +269,6 @@ $selection-bg: $ucdavis-blue !default;
   margin-right: 5px;
 }
 
-// tables
-
 .reveal table {
   margin: auto;
   border-collapse: collapse;
@@ -251,37 +278,30 @@ $selection-bg: $ucdavis-blue !default;
 
 .reveal table th,
 .reveal table td {
-  border: none; /* Remove internal row lines */
-  padding: .23em; /* Adjust padding as needed */
-  text-align: left; /* Adjust text alignment as needed */
-  font-weight: 400; /* Regular font weight for main table text */
+  border: none;
+  padding: .23em;
+  text-align: left;
+  font-weight: 400;
 }
 
-/* Adds a bottom border to the table header row for distinction */
 .reveal table thead th,
 .reveal .slides table tr:last-child td,
 .reveal .slides table {
-  border-bottom: 2px solid #D3D3D3; /* Dark grey color for the bottom border */
+  border-bottom: 2px solid #d3d3d3;
 }
 
-/* Make column headers bold */
 .reveal table thead th {
   font-weight: bold;
 }
 
-/* Styling table captions */
 .reveal table caption {
-  color: #666666; /* Dark grey color for the caption */
-  font-variant: small-caps; /* Use small caps for the caption text */
+  color: #666666;
+  font-variant: small-caps;
 }
-
-// Special catch for etable environment to ensure these table images
-// don't overflow the slide.
-// See: https://lrberge.github.io/fixest/articles/etable_new_features.html
 
 .etable {
   width: 100%;
-  height: calc(100% - 3em); /* Adjust 3em based on the height of your header, if necessary */
+  height: calc(100% - 3em);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -295,29 +315,34 @@ $selection-bg: $ucdavis-blue !default;
   object-fit: contain;
 }
 
-// Change the relative widths of `output-location: column`.
-// See: https://github.com/grantmcdermott/quarto-revealjs-clean/pull/16
 .reveal .columns3070 > div.column:first-child {
   width: 30%;
 }
+
 .reveal .columns3070 div.column:not(:first-child) {
   width: 70%;
 }
+
 .reveal .columns7030 > div.column:first-child {
   width: 70%;
 }
+
 .reveal .columns7030 div.column:not(:first-child) {
   width: 30%;
 }
+
 .reveal .columns4060 > div.column:first-child {
   width: 40%;
 }
+
 .reveal .columns4060 div.column:not(:first-child) {
   width: 60%;
 }
+
 .reveal .columns6040 > div.column:first-child {
   width: 60%;
 }
+
 .reveal .columns6040 div.column:not(:first-child) {
   width: 40%;
 }
